@@ -1,5 +1,6 @@
 package tests;
 
+import com.venison.FizzBuzz;
 import com.venison.MainExecutor;
 import com.venison.WriteStuff;
 import static org.junit.Assert.assertEquals;
@@ -9,10 +10,10 @@ import org.junit.Test;
 public class MainExecutorTest {
 
     @Test
-    public void ExecuteWritesEmptyString(){
+    public void givenConfiguredFizzBuzz_printsOutItsValues(){
         StubWriter stubWriter = new StubWriter();
-        String expected = "";
-        MainExecutor testObj = new MainExecutor(stubWriter);
+        String expected = "1,2,Fizz,4,Buzz";
+        MainExecutor testObj = new MainExecutor(stubWriter, new FizzBuzz(1,5));
 
         testObj.execute();
 
