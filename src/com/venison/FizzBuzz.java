@@ -18,17 +18,25 @@ public class FizzBuzz {
             if(i>lower){
                 builder.append(SequenceDelimiter);
             }
-            if((i % 3) == 0 && (i % 5 )== 0){
+            if(IsModThree(i) && IsModFive(i)){
                 builder.append(ModThreeToken);
                 builder.append(ModFiveToken);
-            }else if((i % 3) == 0){
+            }else if(IsModThree(i)){
                 builder.append(ModThreeToken);
-            }else if((i % 5) == 0){
+            }else if(IsModFive(i)){
                 builder.append(ModFiveToken);
             }else{
                 builder.append(i);
             }
         }
         return builder.toString();
+    }
+
+    private boolean IsModFive(int i) {
+        return (i % 5 )== 0;
+    }
+
+    private boolean IsModThree(int i) {
+        return (i % 3) == 0;
     }
 }
