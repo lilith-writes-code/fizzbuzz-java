@@ -17,4 +17,16 @@ public class FizzBuzzTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void buzz_givenBounds_printsProperStatement() throws Exception {
+        int lower = 5;
+        int upper = 15;
+        FizzBuzz testObj = new FizzBuzz(lower, upper);
+        String expected = "Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz";
+
+        String actual = testObj.buzz();
+
+        assertEquals(expected, actual);
+    }
 }
