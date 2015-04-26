@@ -10,7 +10,7 @@ public class FizzBuzzTest {
 
     @Test
     public void buzzHandlesMultiplesOfThreeAndFive() throws Exception {
-        FizzBuzz testObj = new FizzBuzz();
+        FizzBuzz testObj = new FizzBuzz(1, 15);
         String expected = "1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz";
 
         String actual = testObj.buzz();
