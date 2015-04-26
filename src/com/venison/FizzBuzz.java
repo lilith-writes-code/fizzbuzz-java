@@ -18,12 +18,12 @@ public class FizzBuzz {
             if(!firstTimeThrough(i)){
                 builder.append(SequenceDelimiter);
             }
-            if(IsModThree(i) && IsModFive(i)){
+            if(IsFizzBuzz(i)){
                 builder.append(ModThreeToken);
                 builder.append(ModFiveToken);
-            }else if(IsModThree(i)){
+            }else if(IsFizz(i)){
                 builder.append(ModThreeToken);
-            }else if(IsModFive(i)){
+            }else if(IsBuzz(i)){
                 builder.append(ModFiveToken);
             }else{
                 builder.append(i);
@@ -32,15 +32,23 @@ public class FizzBuzz {
         return builder.toString();
     }
 
+    private boolean IsFizzBuzz(int i) {
+        return IsFizz(i) && IsBuzz(i);
+    }
+
     private boolean firstTimeThrough(int i) {
         return i<=lower;
     }
 
-    private boolean IsModFive(int i) {
-        return (i % 5 )== 0;
+    private boolean IsBuzz(int i) {
+        return IsMod(i, 5);
     }
 
-    private boolean IsModThree(int i) {
-        return (i % 3) == 0;
+    private boolean IsFizz(int i) {
+        return IsMod(i, 3);
+    }
+
+    private boolean IsMod(int value, int mod){
+        return (value % mod ) == 0;
     }
 }
