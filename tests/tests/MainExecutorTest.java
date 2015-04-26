@@ -1,3 +1,5 @@
+package tests;
+
 import com.venison.MainExecutor;
 import com.venison.WriteStuff;
 import static org.junit.Assert.assertEquals;
