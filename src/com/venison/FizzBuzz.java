@@ -6,6 +6,8 @@ public class FizzBuzz {
     private final String ModThreeToken = "Fizz";
     private final String ModFiveToken = "Buzz";
     private final String SequenceDelimiter = ",";
+    private final int buzzValue = 5;
+    private int fizzValue = 3;
 
     public FizzBuzz(int lower, int upper) {
         this.lower = lower;
@@ -41,11 +43,11 @@ public class FizzBuzz {
     }
 
     private boolean IsBuzz(int i) {
-        return IsMod(i, 5);
+        return IsMod(i, buzzValue);
     }
 
     private boolean IsFizz(int i) {
-        return IsMod(i, 3);
+        return IsMod(i, fizzValue);
     }
 
     private boolean IsMod(int value, int mod){
