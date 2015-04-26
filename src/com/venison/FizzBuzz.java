@@ -15,7 +15,7 @@ public class FizzBuzz {
     public String buzz(){
         StringBuilder builder = new StringBuilder();
         for(int i=lower; i<=upper;i++){
-            if(i>lower){
+            if(!firstTimeThrough(i)){
                 builder.append(SequenceDelimiter);
             }
             if(IsModThree(i) && IsModFive(i)){
@@ -30,6 +30,10 @@ public class FizzBuzz {
             }
         }
         return builder.toString();
+    }
+
+    private boolean firstTimeThrough(int i) {
+        return i<=lower;
     }
 
     private boolean IsModFive(int i) {
